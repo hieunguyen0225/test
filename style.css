@@ -7,116 +7,199 @@ html{
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-.header{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/image/background.jpg);
-    background-position: center;
+.hero{
+    background-image: url(/images/background.png);
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
     height: 100vh;
-    width:100%;
+    overflow: hidden;
+    position: relative;
 }
-.menu-bar{
+.navbar{
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    /* background: #000; */
+}
+.logo{
+    cursor: pointer;
+    width: 100px;
+}
+button{
+    cursor: pointer;
+    border: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    border-radius: 20px;
+    color: #fbfcfd;
+    padding: 10px 15px;
+}
+.content{
+    color: #fbfcfd;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+h1{
+    font-size: 80px;
+    margin: 10px 0 30px;
+    line-height: 80px;
+}
+.side-bar{
+    width: 50px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background: linear-gradient(#00545d, #000729);
+    position: absolute;
+}
+.menu{
+    display: block;
+    width: 25px;
+    cursor: pointer;
+    margin: 40px auto 0;
+ }
+.social-links img, .useful-links img{
+    width: 30px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+.social-links{
+    width: 50px;
+    position:absolute;
     text-align:center;
+    top: 50%;
+    transform: translateY(-50%)
 }
-.menu-bar .fa{
-    margin-right: 10px;
-}
-.menu-bar ul{
-    display: inline-flex;
-    list-style: none;
-    color: #fff;
-}
-.menu-bar ul li{
-    margin: 15px;
-    padding: 15px;
-    width: 150px;
-}
-.menu-bar ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-}
-.active, .menu-bar ul li:hover{
-    background:#2bab0d;
-    border-radius: 10px;
-}
-.sub-menu-1{
-    display: none;
-}
-.menu-bar ul li:hover .sub-menu-1{
-    display: block;
+.useful-links{
+    width: 50px;
     position: absolute;
-    background:rgb(0, 100,0);
-    margin-top: 15px;
-    margin-left: -15px;
+    text-align: center;
+    top: 100%;
+    transform: translateY(-100%);
+    /*or we can do bottom: 30px;*/
 }
-.menu-bar ul li:hover .sub-menu-1 ul{
-    display: block;
-    margin: 10px;
+.bubbles img{
+    width: 50px;
+    animation: bubble 7s linear infinite reverse;
 }
-.menu-bar ul li:hover .sub-menu-1 ul li{
-    border-bottom: 1px solid #fff;
-    width: 170px;
-    background: transparent;
-    text-align: left;
-    border-radius: 0;
-}
-.menu-bar ul li:hover .sub-menu-1 ul li:last-child{
-    border-bottom:none;
-}
-.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
-    color: #000;
-}
-.sub-menu-2{
-    display: none;
-}
-.hover-me:hover .sub-menu-2{
-    display: block;
-    margin-left: 180px;
-    margin-top: -55px;
-    background: rgb(0, 100,0);
+.bubbles{
+    bottom: 0;
     position: absolute;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    bottom:-70px;
 }
-/* 
- .active, .menu-bar ul li:hover{
- background: #2bab0d;
- border-radius: 3px;
+@keyframes bubble{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-80vh);
+        opacity: 1;
+    }
 }
-.sub-menu-1{ 
-    display: none;
+.bubbles img:last-child{
+    animation-delay: 2s;
+    width: 15px;
 }
-.menu-bar ul li:hover .sub-menu-1{ 
-    display:block;
+.bubbles img:nth-child(1){
+    animation-delay: 1s;
+    width: 25px;
+}
+.bubbles img:nth-child(2){
+    animation-delay: 2s;
+    width: 15px;
+}
+.bubbles img:nth-child(3){
+    animation-delay: 3.5s;
+    width: 35px;
+}
+.bubbles img:nth-child(4){
+    animation-delay: 2s;
+    width: 30px;
+}
+.bubbles img:nth-child(5){
+    animation-delay: 2.5s;
+    width: 45px;
+}
+.bubbles img:nth-child(6){
+    animation-delay: 6s;
+    width: 55px;
+}
+.bubbles img:nth-child(2){
+    animation-delay: 1s;
+    width: 40px;
+}
+.bubbles2 img{
+    width: 50px;
+    animation: bubble 7s linear infinite;
+}
+.bubbles2{
+    bottom: 0;
     position: absolute;
-    background: rgb(0,100,0);
-    margin-top:15px;
-    margin-left:-15px;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    bottom:-70px;
 }
-.menu-bar ul li:hover .sub-menu-1 ul{ 
-    display: block;
-    margin: 10px;
+@keyframes bubble{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-80vh);
+        opacity: 1;
+    }
 }
-.menu-bar ul li:hover .sub-menu-1 ul li{ 
-    width: 170px;
-    padding: 10px;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    border-radius: 0;
-    text-align: left;
+.bubbles2 img:last-child{
+    animation-delay: 2.5s;
+    width: 25px;
 }
-.menu-bar ul li:hover .sub-menu-1 ul li:last-child{
-    border-bottom: none;
+.bubbles2 img:nth-child(1){
+    animation-delay: 3s;
+    width: 55px;
 }
-.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
-    color: #9af885;
+.bubbles2 img:nth-child(2){
+    animation-delay: 2.5s;
+    width: 25px;
 }
-.sub-menu-2{
-    display: none;
+.bubbles2 img:nth-child(3){
+    animation-delay: 4s;
+    width: 10px;
 }
-.hover-me:hover .sub-menu-2{
-    position: absolute;
-    display: block;
-    margin-top: -48px;
-    margin-left: 185px;
-    background:rgb(0,100,0);
-}   */
+.bubbles2 img:nth-child(4){
+    animation-delay: 3.5s;
+    width: 20px;
+}
+.bubbles2 img:nth-child(5){
+    animation-delay: 2.5s;
+    width: 40px;
+}
+.bubbles2 img:nth-child(6){
+    animation-delay: 3s;
+    width: 55px;
+}
